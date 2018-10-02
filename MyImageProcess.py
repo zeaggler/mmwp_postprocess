@@ -42,7 +42,7 @@ def mypltshow(title, input_image):
 	plt.close()
 
 
-# only return the row line with imagename
+# only return the row line specified by imagename
 def mytxt2dic(txtname, com_imagename):
 	txt2dic = {}
 	with open(txtname, 'r') as f:
@@ -53,7 +53,7 @@ def mytxt2dic(txtname, com_imagename):
 	return txt2dic
 
 
-# delete the imagename inline and return the txt2deldic
+# delete the line specified by imagename and return the txt2deldic
 def mytxt2deldic(txtname, com_imagename):
 	with open(txtname, 'r') as f:
 		txt2deldic = f.readlines()
@@ -74,7 +74,7 @@ def mydetectdic(p_yihuo_dilated, pv_add, v_yihuo, show_scale):
 		pv_area.append(region.area)
 	for region in p_dilated_regionprops:
 		pd_area.append(region.area)
-	# 找到和图与毫米波形态图中相同面积的区域
+	# find the same region in two target images
 	same_region = list(set(pv_area).intersection(pd_area))
 	[show_height_scale, show_width_scale] = show_scale
 	tmp_dict = {}
