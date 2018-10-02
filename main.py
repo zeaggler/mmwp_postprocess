@@ -8,7 +8,7 @@ import scipy.io as scio
 process_image_name = '010.png'
 re_scale = 0.79
 move_width_start = -100
-move_width_end = 120
+move_width_end = 128
 move_height_start = -100
 move_height_end =  128
 move_stride = 2
